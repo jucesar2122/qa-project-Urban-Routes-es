@@ -58,6 +58,7 @@ Asegúrate de actualizar la variable urban_routes_url en el archivo data.py con 
 
 Ejecutar las pruebas:
 Para ejecutar toda la suite de pruebas desde la terminal, usa:
-pytest main.py
+python -m pytest ./test_main.py
+
 Si deseas ver más detalle durante la ejecución:
-pytest -v main.py
+python -m pytest -v ./test_main.py
