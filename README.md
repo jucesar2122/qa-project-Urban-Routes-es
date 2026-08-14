@@ -29,7 +29,7 @@ Este proyecto contiene una suite completa de pruebas automatizadas de interfaz d
 qa-project-Urban-Routes-es/
 │
 ├── data.py          # Datos de prueba (URLs, direcciones, teléfonos, tarjetas, etc.)
-├── main.py          # Clases del Page Object Model y la suite de pruebas PyTest
+├── test_main.py     # Clases del Page Object Model y la suite de pruebas PyTest
 ├── README.md        # Documentación del proyecto
 └── .gitignore       # Archivos omitidos por Git (.venv, __pycache__, etc.)
 
