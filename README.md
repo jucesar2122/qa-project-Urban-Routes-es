@@ -1,64 +1,35 @@
-# Urban Routes - Pruebas Automatizadas de UI
+# Urban Routes - Pruebas Automatizadas de UI (E2E)
 
-## Descripción del Proyecto
-Este proyecto contiene una suite completa de pruebas automatizadas de interfaz de usuario (UI) para la aplicación web **Urban Routes**. Las pruebas simulan el flujo completo de un usuario al solicitar un viaje con tarifa Comfort, abarcando desde la ingreción de la ruta inicial hasta la confirmación de la asignación del conductor.
+## 📌 ¿Qué es esto?
+Suite de pruebas automatizadas de interfaz de usuario (UI) para la aplicación web de movilidad **Urban Routes**. Simula el flujo completo (End-to-End) de un usuario al solicitar un viaje bajo la tarifa *Comfort*.
 
-### Flujo de pruebas cubierto:
-1. Configuración de la dirección de origen y destino.
-2. Selección de la tarifa **Comfort**.
-3. Ingreso de número de teléfono y confirmación del código SMS.
-4. Adición de un método de pago (Tarjeta de crédito).
-5. Envío de un mensaje para el conductor.
-6. Solicitud de manta y pañuelos.
-7. Pedido de helados (2 unidades).
-8. Confirmación del pedido y espera de la tarjeta de información del conductor.
+## 🎯 Producto bajo prueba y Objetivo
+* **Funcionalidad bajo prueba:** Proceso completo de reserva de taxi, validando selección de tarifas, registro telefónico por SMS, métodos de pago, requerimientos adicionales (manta, helados) y confirmación del conductor.
+* **Objetivo:** Verificar la estabilidad de la interfaz y la integración asíncrona de la app para asegurar que el usuario complete su pedido sin fallos bloqueantes en el flujo principal (*Happy Path*).
 
----
+## 💡 Decisiones clave y Mentalidad QA
+* **Patrón Page Object Model (POM):** Separación de los localizadores e interacciones UI de los scripts de prueba para facilitar el mantenimiento técnico.
+* **Manejo de Asincronía:** Implementación de *waits explícitos* (`WebDriverWait` y `expected_conditions`) para prevenir fallos por renderizado diferido de elementos web.
+* **Datos de prueba parametrizados:** Centralización de variables e inputs en `data.py` para evitar datos fijos en el código.
 
-## Tecnologías y Técnicas Utilizadas
-- **Python 3.x**: Lenguaje de programación principal.
-- **Selenium WebDriver**: Herramienta de automatización de navegador web.
-- **PyTest**: Framework de ejecución de pruebas unitarias y de integración.
-- **Page Object Model (POM)**: Patrón de diseño utilizado para separar la lógica de la interfaz de usuario de la lógica de los tests, mejorando la mantenibilidad y reutilización del código.
-- **Waits explícitos (`WebDriverWait` y `expected_conditions`)**: Para manejar la asincronía del sitio y evitar fallos por elementos no cargados a tiempo.
+## 🛠️ Tecnologías y Herramientas
+* **Lenguaje:** Python 3.10+
+* **Automatización:** Selenium WebDriver
+* **Framework de Pruebas:** Pytest
+* **Estructura:** Page Object Model (POM)
 
----
+## 📂 Estructura del Repositorio
+* `data.py`: Datos de prueba parametrizados (URLs, teléfonos, tarjetas, etc.).
+* `test_main.py`: Clases del Page Object Model (POM) y suite de pruebas ejecutables con Pytest.
+* `README.md`: Documentación y contexto del proyecto.
 
-## Estructura del Proyecto
-```text
-qa-project-Urban-Routes-es/
-│
-├── data.py          # Datos de prueba (URLs, direcciones, teléfonos, tarjetas, etc.)
-├── test_main.py     # Clases del Page Object Model y la suite de pruebas PyTest
-├── README.md        # Documentación del proyecto
-└── .gitignore       # Archivos omitidos por Git (.venv, __pycache__, etc.)
+## 🚀 Instrucciones para Ejecutar las Pruebas
 
-Instrucciones para Ejecutar las Pruebas
-Prerrequisitos
-Tener instalado Python 3.10+ en tu sistema.
+### Prerrequisitos
+* Python 3.10+ e instalado Google Chrome.
 
-Tener Google Chrome instalado.
-
-Pasos de ejecución
-Clonar el repositorio:
-git clone <URL_DE_TU_REPOSOTORIO>
-cd qa-project-Urban-Routes-es
-Crear y activar el entorno virtual:
-
-En Windows:
-python -m venv .venv
-.venv\Scripts\activate
-En macOS/Linux:
-python3 -m venv .venv
-source .venv/bin/activate
-Instalar dependencias:
-pip install selenium pytest
-Actualizar la URL del servidor:
-Asegúrate de actualizar la variable urban_routes_url en el archivo data.py con un servidor activo de Urban Routes.
-
-Ejecutar las pruebas:
-Para ejecutar toda la suite de pruebas desde la terminal, usa:
-python -m pytest ./test_main.py
-
-Si deseas ver más detalle durante la ejecución:
-python -m pytest -v ./test_main.py
+### Pasos de ejecución
+1. **Clonar el repositorio:**
+   ```bash
+   git clone [https://github.com/jucesar2122/qa-project-Urban-Routes-es.git](https://github.com/jucesar2122/qa-project-Urban-Routes-es.git)
+   cd qa-project-Urban-Routes-es
