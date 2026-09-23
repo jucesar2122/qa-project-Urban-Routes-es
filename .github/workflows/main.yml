@@ -19,11 +19,11 @@ jobs:
       with:
         python-version: '3.11'
 
-    - name: Instalar dependencias
+    - name: Instalar Chrome y Selenium
       run: |
         python -m pip install --upgrade pip
-        pip install pytest selenium
+        pip install pytest selenium requests
 
-    - name: Ejecutar pruebas de Selenium con Pytest
+    - name: Ejecutar pruebas con Pytest
       run: |
-        pytest test_main.py.github/workflows/main.yml
+        pytest test_main.py
