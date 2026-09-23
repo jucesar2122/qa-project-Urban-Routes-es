@@ -1,4 +1,4 @@
-urban_routes_url = (https://example.com)
+urban_routes_url = 'https://example.com'
 address_from = 'East 2nd Street, 601'
 address_to = '1300 1st St'
 phone_number = '+1 123 123 12 12'
