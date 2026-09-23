@@ -91,7 +91,7 @@ class TestUrbanRoutes:
 @classmethod
     def setup_class(cls):
         chrome_options = webdriver.ChromeOptions()
-        chrome_options.add_argument('--headless')  # <--- OBLIGATORIO PARA CI/CD
+        chrome_options.add_argument('--headless')  # OBLIGATORIO para GitHub Actions
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')
         chrome_options.add_argument('--window-size=1920,1080')
