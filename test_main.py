@@ -88,14 +88,19 @@ class UrbanRoutesPage:
 class TestUrbanRoutes:
     driver = None
 
-@classmethod
+class TestUrbanRoutes:
+    driver = None
+
+    @classmethod
     def setup_class(cls):
         chrome_options = webdriver.ChromeOptions()
-        chrome_options.add_argument('--headless')  # OBLIGATORIO para GitHub Actions
+        chrome_options.add_argument('--headless')
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')
         chrome_options.add_argument('--window-size=1920,1080')
         cls.driver = webdriver.Chrome(options=chrome_options)
+
+    # ... resto de los tests ...
 
     def test_order_taxi_e2e(self):
         # 1. Abrir la página y configurar la ruta
